@@ -1,3 +1,4 @@
+// liegt jetzt hier <script src="assets/js/components/photoswipe.js"></script>
 // PhotoSwipe integration for Nova Consonanza gallery
 // Complete rewrite with defensive programming to fix undefined errors
 

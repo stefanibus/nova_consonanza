@@ -1,0 +1,15 @@
+alle bilder liegen nur auf dem server 
+
+
+todo 
+
+- vergleiche index.html zwischen stackblitz und fileZilla  ich denke NUR Stackblitz ist besser   
+- vergleiche js/components  alle files einmal 
+- kläre die Pfade in der index html auf korrektheit 
+- github upload 
+- Logo Images auf Platte remote aufräumen 
+- Abgleich mit meinem Lokalen Projekt auf Sublime oder visual studio 
+- login daten auf server sichern 
+- css und stuff im Root aufräumen 
+- 
+

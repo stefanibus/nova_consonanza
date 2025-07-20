@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Signika';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(../fonts/signika/v28/vEF72_JTCgwQ5ejvMV0Ox_Kg1UwJ0tKfX4zNpD8E4ASzH1r93zuoyjkj.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Signika';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/signika/v28/vEF72_JTCgwQ5ejvMV0Ox_Kg1UwJ0tKfX4zNpD8E4ASzH1r9Zjyoyjkj.ttf) format('truetype');
+}
