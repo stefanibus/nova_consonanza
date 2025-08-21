@@ -217,7 +217,7 @@ function setupResizeHandler() {
 // NEW: Active link highlighting based on scroll position
 function setupActiveNavigation() {
     const navLinks = document.querySelectorAll('.js-scroll-trigger');
-    const sections = document.querySelectorAll('section[id], div[id]');
+    const sections = document.querySelectorAll('section[id], div.relevantInTopNavToStyleTheActiveNavElement[id]');
     
     function updateActiveLink() {
         const scrollY = window.pageYOffset;
