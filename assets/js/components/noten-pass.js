@@ -24,9 +24,7 @@ function checkPass() {
     } else { 
       codewordCheck(codeword); // codewordCheck-function below this
     }
-  } else {
-    alert("Okay. \nTschüß!");
-  }
+  }   //else { alert("Okay. \nTschüß!");   }
 }
 
 function codewordCheck(code) { 
