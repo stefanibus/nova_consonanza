@@ -1,9 +1,3 @@
-// passwort für Noten: der Tag mit dem Event-Handler auf der ID "verlinkung" liegt im Footer 
-
-// liegt jetzt hier <script src="https://novaconsonanza.de/assets/js/components/noten-pass.js"> // USER REQUEST FOR CODEWORD --></script>
-
- 
-
 // USER REQUEST FOR CODEWORD --> STARTS HERE  
 let ergebnis = 			document.getElementById("result");  
 let hide 		= 			document.getElementsByClassName("hide");   

@@ -1,5 +1,3 @@
-// liegt jetzt hier <script src="https://novaconsonanza.de/assets/js/components/toTop.js"></script>
- 
 
 const button= document.querySelector('.am-button_toTop')
 button.addEventListener('click', () => scrollToTop(600))

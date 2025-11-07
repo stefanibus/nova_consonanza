@@ -1,7 +1,3 @@
-// liegt jetzt hier <script src="https://novaconsonanza.de/assets/js/components/menu.js"></script>
-// Fixed Menu JavaScript - Removes AnyMod dependencies and adds proper mobile menu closing
-// This replaces the original menu.js with working functionality
-
 // Get references to DOM elements (no more mod.selector dependencies)
 const navbar = document.querySelector('.navbar');
 const bodyEl = document.getElementById('entireBody');

@@ -13,3 +13,5 @@ https://github.com/stefanibus/nova_consonanza
 Website zuvor: https://novaconsonanza.de/index-bis082025.html
 
 Website: https://novaconsonanza.de/
+
+Website om GitHub: https://stefanibus.github.io/nova_consonanza/
