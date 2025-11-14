@@ -74,40 +74,62 @@ $(function () {
     });
 });
 
-// NEW: Smooth scrolling functionality for .js-scroll-trigger links
+// Smooth scrolling functionality for .js-scroll-trigger links - with debug mode
 function initSmoothScrolling() {
     const scrollTriggers = document.querySelectorAll('.js-scroll-trigger');
-    
+    const EXTRA_OFFSET = 20; // restores original ~20px spacing
+    const DEBUG = false; // set to true to enable logging
+
     scrollTriggers.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            
-            // Only handle internal anchor links
-            if (href && href.startsWith('#') && href !== '#') {
-                e.preventDefault();
-                
-                const targetId = href.substring(1);
-                const targetElement = document.getElementById(targetId);
-                
-                if (targetElement) {
-                    // Calculate scroll position accounting for fixed navbar
-                    const navbarHeight = navbar ? navbar.offsetHeight : 80;
-                    const targetPosition = targetElement.offsetTop - navbarHeight - 20;
-                    
-                    // Smooth scroll to target
-                    window.scrollTo({
-                        top: Math.max(0, targetPosition),
-                        behavior: 'smooth'
-                    });
-                    
-                    // IMPORTANT: Close mobile menu after clicking
-                    closeMobileMenu();
-                    
-                    // Update URL without triggering scroll
-                    if (history.pushState) {
-                        history.pushState(null, null, href);
-                    }
+            if (!href || !href.startsWith('#') || href === '#') return;
+
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (!targetElement) return;
+
+            // Auto-detect fixed navbar top
+            let navbarTop = document.querySelector('.navbar-top');
+            if (!navbarTop) {
+                navbarTop = document.querySelector('.navbar'); // fallback
+            }
+
+            const dynamicNavbarHeight = window.innerWidth < 1000
+                ? 63.9   // fixed collapsed navbar height for mobile
+                : (navbarTop ? navbarTop.offsetHeight : 0); // desktop dynamic
+
+            const scrollToTarget = () => {
+                const elementRect = targetElement.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const targetPosition = scrollTop + elementRect.top - dynamicNavbarHeight - EXTRA_OFFSET;
+
+                if (DEBUG) {
+                    console.log('SmoothScroll Debug:');
+                    console.log('  window.innerWidth:', window.innerWidth);
+                    console.log('  dynamicNavbarHeight:', dynamicNavbarHeight);
+                    console.log('  targetRect.top:', elementRect.top);
+                    console.log('  pageYOffset:', scrollTop);
+                    console.log('  EXTRA_OFFSET:', EXTRA_OFFSET);
+                    console.log('  targetPosition (final scrollTop):', targetPosition);
                 }
+
+                window.scrollTo({
+                    top: Math.max(0, targetPosition),
+                    behavior: 'smooth'
+                });
+
+                if (history.pushState) {
+                    history.pushState(null, null, href);
+                }
+            };
+
+            if (typeof closeMobileMenu === 'function') {
+                closeMobileMenu();
+                requestAnimationFrame(scrollToTarget);
+            } else {
+                scrollToTarget();
             }
         });
     });
