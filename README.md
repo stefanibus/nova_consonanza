@@ -14,6 +14,6 @@ Website zuvor: https://novaconsonanza.de/index-bis082025.html
 
 Website: https://novaconsonanza.de/
 
-Website om GitHub: https://stefanibus.github.io/nova_consonanza/
+Website on GitHub: https://stefanibus.github.io/nova_consonanza/
 
 DNS-Records are set on ionos.de, documented on FTP folder: new/ionosDNS_Settings/result/
