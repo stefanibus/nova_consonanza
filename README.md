@@ -10,10 +10,10 @@ https://docs.google.com/document/d/1XPfkprjUJKM1ZUgeZMIEwEu8T1MwYaDGMe1bOMLO5Ko/
 GitHub Version Control:
 https://github.com/stefanibus/nova_consonanza
 
-Website zuvor: https://novaconsonanza.de/index-bis082025.html
+Website mit AnyMod.com bis 08/2025: https://novaconsonanza.de/index-bis082025.html
 
 Website: https://novaconsonanza.de/
 
 Website on GitHub: https://stefanibus.github.io/nova_consonanza/
 
-DNS-Records are set on ionos.de, documented on FTP folder: new/ionosDNS_Settings/result/
+DNS-Records: are configured on login.ionos.de and documented on FTP in this folder: new/ionosDNS_Settings/result/
