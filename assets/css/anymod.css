@@ -3623,7 +3623,7 @@
 
 [dkbnor] .am-timeline {
   position: relative;
-  top: -63px;
+  top: 63px !important;  /* top: -63px; */ 
   width: 100%;
   background-color: #fff;
   -webkit-box-shadow: 0 5px 25px 5px rgba(0, 0, 0, 0.2);
@@ -3959,9 +3959,14 @@
   }
 }
 
+#gallery_parent { 
+  max-width: 1200px;
+  justify-self: center;
+}
+
 [nkmnmn] {
   width: 100%;
-  max-width: 1200px;
+/*    max-width: 1751px; war bis 11/2025 1200px  Problem mit id #videogallery  */
   margin: 0 auto;
   text-align: center
 }
