@@ -65,6 +65,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" />
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" />
+
+<!-- AnyMod assets -->
+<link href="https://cdn.anymod.com/anymod.namespaced.a03.materialize-1.0.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<!-- /AnyMod assets -->
+
+
 </head>
 
 <body id="entireBody" data-aos-easing="ease" data-aos-duration="4" data-aos-delay="0">
@@ -84,7 +94,6 @@
     </div>
   </div>
 
-  <div id="anymod-raddda" data-anymod="raddda-live-lrnllbu" raddda="" data-anymod-mounted=""></div>
   <div id="anymod-radrra" data-anymod="radrra-live-i1zb7s7" radrra="" data-anymod-mounted="" class="a01">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top scrolled">
       <div class="container" id="mainNav">
@@ -999,9 +1008,7 @@
           </div>
           <h3 class="am-footer__column-title">Kontakt &amp; Ihr Feedback</h3>
           <ul>
-            <li class="openModalExternallyThree">
-              Senden Sie uns gerne Ihr Feedback an:<!-- strong>!</strong -->&nbsp;
-            </li>
+            <li class="openModalExternallyOne">Senden Sie uns Ihr <br/></strong><strong>Feedback sehr gerne hier</strong>,&nbsp; oder an: <!-- ohne AnyMod: Senden Sie uns gerne Ihr Feedback an:&nbsp; --></li> 
             <li>
               Kontakt:
               <a href="mailto:info@novaconsonanza.de">info@novaconsonanza.de</a>
@@ -1065,6 +1072,9 @@
     </a>
   </div>
 
+  <!-- Feedback form delivered via AnyMod.com    --> 
+  <div id="anymod-ornnba"></div>
+
   <!-- Local JavaScript Assets    -->
 
   <script defer="" src="assets/js/vendor/materialize.min.js"></script>
@@ -1087,11 +1097,25 @@
   <!-- PhotoSwipe container will be created dynamically by JavaScript -->
   <script src="assets/js/components/photoswipe.js"></script>
 
-  <!-- AnyMod -->
+  <!-- AnyMod-Engine, also see additional AnyMod-Assets within HEAD-CSS-SECTION -->
 <script id="AnyMod-script">
-  !function (n, t, o, e, r, a, c, d, i) { function m(t) { return encodeURIComponent(btoa(t)) } e[n] = { Project: t, rq: [], Opts: c, ready: function (t) { e[n].rq.push(t) } }, i = r.getElementById(n + "-" + a), [o + "/page/" + t + "/" + m((c = e.location).pathname) + "/" + m(c.host) + "?t=" + Date.now(), o].map(function (t) { (d = r.createElement(a)).defer = 1, d.src = t, i.parentNode.insertBefore(d, i) }) }("AnyMod", "837232", "https://cdn.anymod.com/v2", window, document, "script", { toolkit: !0, tips: !0, priority: ["radrra", "ornkka", "alnmkr", "mlomkd"] })
+  !function (n, t, o, e, r, a, c, d, i) { function m(t) { return encodeURIComponent(btoa(t)) } e[n] = { Project: t, rq: [], Opts: c, ready: function (t) { e[n].rq.push(t) } }, i = r.getElementById(n + "-" + a), [o + "/page/" + t + "/" + m((c = e.location).pathname) + "/" + m(c.host) + "?t=" + Date.now(), o].map(function (t) { (d = r.createElement(a)).defer = 1, d.src = t, i.parentNode.insertBefore(d, i) }) }("AnyMod", "837232", "https://cdn.anymod.com/v2", window, document, "script", { toolkit: !0, tips: !0, priority: ["ornnba"] })
 </script>
-<!---->
+<!-- Für das AnyMod Feedback Formular und für Trigger über drei externe DIVs -->
+<script>  
+// OPEN CONTACT SWING FORM from several CTA-Buttons  (EXTERNAL TRIGGER)   
+$(".stefano_cta_SwingButtonTwo, .stefano_cta_SwingButtonZero, .openModalExternallyOne").click(function(){ 
+  window.open_swing_form_layer();  
+}); 
+// open Swing Layer from anyMod Mod "ornnba"
+window.open_swing_form_layer = function() {
+  $("div.fixed-action-btn > a > i").click(); 
+  // Change Text on first Button 
+  $('.stefano_cta_SwingButtonZero p').text($('.stefano_cta_SwingButtonZero  p').text() == 'Ihr Feedback freut uns!' ? 'Ihr Feedback motiviert uns!' : 'Ihr Feedback freut uns!'); 
+  // Change Text on second Button
+  $('.stefano_cta_SwingButtonTwo p').text($('.stefano_cta_SwingButtonTwo  p').text() == 'Ihr Feedback freut uns!' ? 'Ihr Feedback motiviert uns!' : 'Ihr Feedback freut uns!');
+};
+</script>
 </body>
 
 </html>
