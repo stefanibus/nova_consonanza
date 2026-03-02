@@ -1,0 +1,27 @@
+name: Inject Build Timestamp
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, 'Auto update build timestamp')"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Replace BUILD_TIMESTAMP
+        run: |
+          TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+          sed -i "s/{{BUILD_TIMESTAMP}}/$TIMESTAMP/g" index.html
+
+      - name: Commit updated file
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add index.html
+          git commit -m "Auto update build timestamp"
+          git push
