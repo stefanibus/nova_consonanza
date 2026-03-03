@@ -16,7 +16,7 @@ jobs:
       - name: Replace BUILD_TIMESTAMP
         run: |
           TIMESTAMP=$(date +%Y%m%d-%H%M%S)
-          sed -i "s/{{BUILD_TIMESTAMP}}/$TIMESTAMP/g" index.html
+          sed -i "s/<meta name=\"build-version\" content=\".*\">/<meta name=\"build-version\" content=\"$TIMESTAMP\">/g" index.html
 
       - name: Replace BUILD_TIMESTAMP
         run: |
