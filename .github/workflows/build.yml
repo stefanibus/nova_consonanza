@@ -18,7 +18,7 @@ jobs:
           TIMESTAMP=$(date +%Y%m%d-%H%M%S)
           sed -i "s/{{BUILD_TIMESTAMP}}/$TIMESTAMP/g" index.html
 
-      - name: Commit updated file
+      - name: Replace BUILD_TIMESTAMP
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
